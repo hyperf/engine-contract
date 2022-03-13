@@ -4,17 +4,15 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "hyperf",
+        "coroutine",
+        "contract",
+        "engine"
     ],
-    "description": "",
+    "description": "Contract for Coroutine Engine",
     "autoload": {
         "psr-4": {
             "Hyperf\\Engine\\Contract\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "HyperfTest\\": "tests"
         }
     },
     "require": {
@@ -27,9 +25,6 @@
         "phpunit/phpunit": ">=7.0",
         "swoole/ide-helper": "^4.5"
     },
-    "suggest": {
-        "swow/swow": "Required to create swow components."
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
@@ -40,10 +35,5 @@
         "test": "phpunit -c phpunit.xml --colors=always",
         "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
         "cs-fix": "php-cs-fixer fix $1"
-    },
-    "extra": {
-        "hyperf": {
-            "config": "Hyperf\\Engine\\Contract\\ConfigProvider"
-        }
     }
 }
