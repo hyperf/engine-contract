@@ -15,6 +15,11 @@
             "Hyperf\\Engine\\Contract\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
     "require": {
         "php": ">=8.0"
     },
