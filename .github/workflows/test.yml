@@ -53,7 +53,7 @@ jobs:
           cd swow/ext || exit
 
           phpize
-          ./configure --enable-debug
+          ./configure --enable-swow-ssl --enable-swow-curl
           make -j "$(nproc)"
           sudo make install
           sudo sh -c "echo extension=swow > /etc/php/${{ matrix.php-version }}/cli/conf.d/swow.ini"
