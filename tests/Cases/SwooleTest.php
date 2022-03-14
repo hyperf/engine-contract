@@ -94,4 +94,30 @@ class SwooleTest extends AbstractTestCase
             }
         }
     }
+
+    public function testCoroutineSocketRecvPacketReturnType()
+    {
+        $ref = new ReflectionClass(Socket::class);
+
+        $m = $ref->getMethod('recvPacket');
+
+        foreach ($m->getReturnType()->getTypes() as $namedType) {
+            $this->assertTrue(in_array($namedType->getName(), ['string', 'false'], true));
+        }
+    }
+
+    public function testCoroutineSocketRecvPacketParamaters()
+    {
+        $ref = new ReflectionClass(Socket::class);
+
+        $m = $ref->getMethod('recvPacket');
+
+        $params = $m->getParameters();
+
+        foreach ($params as $param) {
+            $this->assertSame('timeout', $param->getName());
+            $this->assertSame('float', $param->getType()->getName());
+            $this->assertSame(0, $param->getDefaultValue());
+        }
+    }
 }

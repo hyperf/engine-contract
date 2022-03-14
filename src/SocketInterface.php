@@ -17,5 +17,7 @@ interface SocketInterface
 
     public function recvAll(int $length = 65536, float $timeout = 0): string|false;
 
+    public function recvPacket(float $timeout = 0): string|false;
+
     public function close(): bool;
 }
