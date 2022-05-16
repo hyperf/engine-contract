@@ -63,4 +63,11 @@ interface CoroutineInterface
      * Execute callback when coroutine destruct.
      */
     public static function defer(callable $callable): void;
+
+    /**
+     * Resume the coroutine by coroutine Id.
+     * @param mixed $data only Support Swow
+     * @return mixed only Support Swow
+     */
+    public static function resumeById(int $id, mixed $data = null): mixed;
 }
