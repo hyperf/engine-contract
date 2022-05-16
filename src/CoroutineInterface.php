@@ -67,13 +67,14 @@ interface CoroutineInterface
     /**
      * Yield the current coroutine.
      * @param mixed $data only Support Swow
+     * @return bool|mixed Swow:mixed, Swoole:bool
      */
     public static function yield(mixed $data = null): mixed;
 
     /**
      * Resume the coroutine by coroutine Id.
      * @param mixed $data only Support Swow
-     * @return mixed only Support Swow
+     * @return bool|mixed Swow:mixed, Swoole:bool
      */
     public static function resumeById(int $id, mixed $data = null): mixed;
 }
