@@ -120,4 +120,31 @@ class SwooleTest extends AbstractTestCase
             $this->assertSame(0, $param->getDefaultValue());
         }
     }
+
+    public function testCoroutineSocketConnect()
+    {
+        $ref = new ReflectionClass(Socket::class);
+
+        $m = $ref->getMethod('connect');
+
+        $params = $m->getParameters();
+        $this->assertSame(3, count($params));
+
+        $host = $params[0];
+        $this->assertSame('string', $host->getType()->getName());
+        $this->assertFalse($host->allowsNull());
+        $this->assertFalse($host->isDefaultValueAvailable());
+
+        $port = $params[1];
+        $this->assertSame('int', $port->getType()->getName());
+        $this->assertFalse($port->allowsNull());
+        $this->assertTrue($port->isDefaultValueAvailable());
+        $this->assertSame(0, $port->getDefaultValue());
+
+        $timeout = $params[2];
+        $this->assertSame('float', $timeout->getType()->getName());
+        $this->assertFalse($timeout->allowsNull());
+        $this->assertTrue($timeout->isDefaultValueAvailable());
+        $this->assertSame(0, $timeout->getDefaultValue());
+    }
 }
