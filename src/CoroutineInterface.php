@@ -66,6 +66,7 @@ interface CoroutineInterface
 
     /**
      * Yield the current coroutine.
+     * @param mixed $data only Support Swow
      */
     public static function yield(mixed $data = null): mixed;
 
