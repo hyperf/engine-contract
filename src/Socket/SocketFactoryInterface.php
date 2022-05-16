@@ -9,7 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Engine\Contract;
+namespace Hyperf\Engine\Contract\Socket;
+
+use Hyperf\Engine\Contract\SocketInterface;
 
 interface SocketFactoryInterface
 {
