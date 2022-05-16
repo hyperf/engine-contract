@@ -146,5 +146,7 @@ class SwooleTest extends AbstractTestCase
         $this->assertFalse($timeout->allowsNull());
         $this->assertTrue($timeout->isDefaultValueAvailable());
         $this->assertSame(0, $timeout->getDefaultValue());
+
+        $this->assertSame('bool', $m->getReturnType()->getName());
     }
 }

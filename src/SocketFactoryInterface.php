@@ -13,4 +13,5 @@ namespace Hyperf\Engine\Contract;
 
 interface SocketFactoryInterface
 {
+    public function make(SocketOptionInterface $option): SocketInterface;
 }
