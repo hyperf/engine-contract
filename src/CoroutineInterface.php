@@ -65,6 +65,11 @@ interface CoroutineInterface
     public static function defer(callable $callable): void;
 
     /**
+     * Yield the current coroutine.
+     */
+    public static function yield(mixed $data = null): mixed;
+
+    /**
      * Resume the coroutine by coroutine Id.
      * @param mixed $data only Support Swow
      * @return mixed only Support Swow
