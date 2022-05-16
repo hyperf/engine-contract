@@ -76,5 +76,5 @@ interface CoroutineInterface
      * @param mixed $data only Support Swow
      * @return bool|mixed Swow:mixed, Swoole:bool
      */
-    public static function resumeById(int $id, mixed $data = null): mixed;
+    public static function resumeById(int $id, mixed ...$data): mixed;
 }
