@@ -20,4 +20,6 @@ interface ResponseInterface
      * Must be used in swoole process mode.
      */
     public function init(mixed $frame): static;
+
+    public function getFd(): int;
 }
