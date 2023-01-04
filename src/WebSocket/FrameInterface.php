@@ -67,4 +67,6 @@ interface FrameInterface extends Stringable
     public function withPayloadData(mixed $payloadData): static;
 
     public function toString(bool $withoutPayloadData = false): string;
+
+    public static function from(mixed $frame): static;
 }
