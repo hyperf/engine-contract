@@ -17,8 +17,8 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        php-version: [ '8.0', '8.1' ]
-        engine: [ 'none', 'swoole' ]
+        php-version: [ '8.0', '8.1', '8.2' ]
+        engine: [ 'none', 'swoole', 'swow' ]
       max-parallel: 5
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
           rm swoole.tar.gz
           cd swoole
           phpize
-          ./configure --enable-openssl --enable-http2 --enable-swoole-curl --enable-swoole-json
+          ./configure --enable-openssl --enable-swoole-curl --enable-swoole-json
           make -j$(nproc)
           sudo make install
           sudo sh -c "echo extension=swoole > /etc/php/${{ matrix.php-version }}/cli/conf.d/swoole.ini"
@@ -67,6 +67,6 @@ jobs:
         run: composer update -o --no-scripts
       - name: Run Test Cases
         run: |
-          vendor/bin/php-cs-fixer fix --dry-run
+          PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --dry-run
           composer analyse
           composer test
