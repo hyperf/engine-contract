@@ -13,8 +13,11 @@ namespace Hyperf\Engine\Contract\WebSocket;
 
 interface ResponseInterface
 {
+    public function push(FrameInterface $frame): bool;
+
     /**
-     * @param int $fd swoole process mode is required
+     * Init fd by frame or request and so on,
+     * Must be used in swoole process mode.
      */
-    public function push(FrameInterface $frame, int $fd = 0): bool;
+    public function init(mixed $frame): static;
 }
