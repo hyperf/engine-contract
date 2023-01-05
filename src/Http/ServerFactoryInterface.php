@@ -13,5 +13,5 @@ namespace Hyperf\Engine\Contract\Http;
 
 interface ServerFactoryInterface
 {
-    public static function make(string $name, int $port = 0): ServerInterface;
+    public function make(string $name, int $port = 0): ServerInterface;
 }
