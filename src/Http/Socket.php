@@ -11,7 +11,13 @@ declare(strict_types=1);
  */
 namespace Hyperf\Engine\Contract\Http;
 
-interface ServerFactoryInterface
+interface Socket
 {
-    public function make(string $name, int $port = 0, int $flags = Socket::BIND_FLAG_NONE): ServerInterface;
+    public const BIND_FLAG_NONE = 0;
+
+    public const BIND_FLAG_IPV6ONLY = 1;
+
+    public const BIND_FLAG_REUSEADDR = 2;
+
+    public const BIND_FLAG_REUSEPORT = 4;
 }
