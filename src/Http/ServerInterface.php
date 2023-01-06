@@ -16,4 +16,6 @@ interface ServerInterface
     public function handle(callable $callable): static;
 
     public function start(): void;
+
+    public function close(): bool;
 }
