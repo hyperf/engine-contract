@@ -77,4 +77,10 @@ interface CoroutineInterface
      * @return bool|mixed Swow:mixed, Swoole:bool
      */
     public static function resumeById(int $id, mixed ...$data): mixed;
+
+    /**
+     * Get the coroutine stats.
+     * @return array 
+     */
+    public static function stats(): array;
 }
