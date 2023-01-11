@@ -80,7 +80,6 @@ interface CoroutineInterface
 
     /**
      * Get the coroutine stats.
-     * @return array 
      */
     public static function stats(): array;
 }
