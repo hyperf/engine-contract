@@ -86,5 +86,5 @@ interface CoroutineInterface
     /**
      * Check if a couroutine exists or not.
      */
-    public static function exists(int $id):bool;
+    public static function exists(int $id): bool;
 }
