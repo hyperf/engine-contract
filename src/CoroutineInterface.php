@@ -84,7 +84,7 @@ interface CoroutineInterface
     public static function stats(): array;
 
     /**
-     * Check if a couroutine exists or not.
+     * Check if a coroutine exists or not.
      */
     public static function exists(int $id): bool;
 }
