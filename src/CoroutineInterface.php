@@ -82,4 +82,9 @@ interface CoroutineInterface
      * Get the coroutine stats.
      */
     public static function stats(): array;
+
+    /**
+     * Check if a couroutine exists or not.
+     */
+    public static function exists():bool;
 }
