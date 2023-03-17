@@ -25,4 +25,6 @@ interface ClientInterface
     public function ping(): bool;
 
     public function close(): bool;
+
+    public function isConnected(): bool;
 }
