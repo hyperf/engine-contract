@@ -22,6 +22,8 @@ interface ClientInterface
 
     public function recv(float $timeout = 0): ResponseInterface;
 
+    public function write(int $streamId, mixed $data, bool $end = false): bool;
+
     public function ping(): bool;
 
     public function close(): bool;
