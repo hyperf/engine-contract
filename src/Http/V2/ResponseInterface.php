@@ -19,5 +19,5 @@ interface ResponseInterface
 
     public function getHeaders(): array;
 
-    public function getData(): string;
+    public function getBody(): string;
 }
