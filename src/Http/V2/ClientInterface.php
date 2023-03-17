@@ -21,4 +21,8 @@ interface ClientInterface
     public function send(RequestInterface $request): int;
 
     public function recv(float $timeout = 0): ResponseInterface;
+
+    public function ping(): bool;
+
+    public function close(): bool;
 }
