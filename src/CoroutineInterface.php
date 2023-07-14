@@ -87,9 +87,4 @@ interface CoroutineInterface
      * Check if a coroutine exists or not.
      */
     public static function exists(int $id): bool;
-
-    /**
-     * Get Hook Coroutine Flags.
-     */
-    public static function hookFlags(): int;
 }
