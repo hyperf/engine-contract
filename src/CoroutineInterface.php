@@ -88,9 +88,4 @@ interface CoroutineInterface
      * Check if a coroutine exists or not.
      */
     public static function exists(int $id): bool;
-
-    /**
-     * Check if coroutine is available.
-     */
-    public static function isAvailable(): bool;
 }
