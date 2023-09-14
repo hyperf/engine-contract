@@ -92,5 +92,5 @@ interface CoroutineInterface
     /**
      * Check if coroutine is available.
      */
-    public static function isCoroutineAvailable(): bool;
+    public static function isAvailable(): bool;
 }
