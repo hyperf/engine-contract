@@ -14,11 +14,11 @@ namespace Hyperf\Engine\Contract;
 
 interface SocketInterface
 {
-    public function sendAll(string $data, float $timeout = 0): int|false;
+    public function sendAll(string $data, float $timeout = 0): false|int;
 
-    public function recvAll(int $length = 65536, float $timeout = 0): string|false;
+    public function recvAll(int $length = 65536, float $timeout = 0): false|string;
 
-    public function recvPacket(float $timeout = 0): string|false;
+    public function recvPacket(float $timeout = 0): false|string;
 
     public function close(): bool;
 }

@@ -12,16 +12,20 @@ declare(strict_types=1);
 
 namespace Hyperf\Engine\Contract;
 
+/**
+ * @template TValue of mixed
+ */
 interface ChannelInterface
 {
     /**
-     * @param float|int $timeout [optional] = -1
+     * @param TValue $data
+     * @param float|int $timeout seconds [optional] = -1
      */
     public function push(mixed $data, float $timeout = -1): bool;
 
     /**
      * @param float $timeout seconds [optional] = -1
-     * @return mixed when pop failed, return false
+     * @return false|TValue when pop failed, return false
      */
     public function pop(float $timeout = -1): mixed;
 
