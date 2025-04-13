@@ -90,7 +90,7 @@ interface CoroutineInterface
     public static function exists(int $id): bool;
 
     /**
-     * @return iterable<int> Returns all coroutine IDs.
+     * @return iterable<int> returns all coroutine IDs
      */
     public static function list(): iterable;
 }
